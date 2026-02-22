@@ -23,6 +23,9 @@ const mainContainer = document.querySelector("main");
 const filteredSection = document.getElementById("filtered-section");
 
 
+
+
+
 function calculateCount() {
     totalCount.innerText = allCardSection.children.length;
     totalJobs.innerText = allCardSection.children.length;
@@ -79,10 +82,12 @@ mainContainer.addEventListener("click", function (event) {
         const cardTitle = parenNode.querySelector('.cardTitle').innerText;
         const cardDes = parenNode.querySelector('.cardDes').innerText;
         const requiers = parenNode.querySelector('.requiers').innerText;
-        const status = parenNode.querySelector('.status-btn').innerText;
+        let status = parenNode.querySelector('.status-btn').innerText;
         const notes = parenNode.querySelector('.notes').innerText;
 
-        parenNode.querySelector('.status-btn').innerText = 'INTERVIEW'
+        parenNode.querySelector('.status-btn').innerText = 'INTERVIEW';
+
+
 
         const cardInfo = {
             cardTitle,
@@ -112,10 +117,10 @@ mainContainer.addEventListener("click", function (event) {
         const cardTitle = parenNode.querySelector('.cardTitle').innerText;
         const cardDes = parenNode.querySelector('.cardDes').innerText;
         const requiers = parenNode.querySelector('.requiers').innerText;
-        const status = parenNode.querySelector('.status-btn').innerText;
+        let status = parenNode.querySelector('.status-btn').innerText;
         const notes = parenNode.querySelector('.notes').innerText;
 
-        parenNode.querySelector('.status-btn').innerText = 'REJECTED'
+        parenNode.querySelector('.status-btn').innerText = 'REJECTED';
 
         const cardInfo = {
             cardTitle,
@@ -132,7 +137,7 @@ mainContainer.addEventListener("click", function (event) {
 
         interviewList = interviewList.filter(item => item.cardTitle != cardInfo.cardTitle);
 
-        if(currentStatus == 'interview-filter-btn'){
+        if (currentStatus == 'interview-filter-btn') {
             renderInterview();
         }
 

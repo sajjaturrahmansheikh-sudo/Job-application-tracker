@@ -1,7 +1,7 @@
 
 ## Question 1 - What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 
-Ans - With getElemetById() selcted one Element by its Id and it returns a single Element object .
+Ans - Using getElemetById() selcted one Element by its Id and it returns a single Element object .
      Can only search by Id .  No Css selector support . 
 
     And using getElementsByClassName() it selected Element by ClassName it can contain multiple Elements.cannot use full Css Selector it must convert to Array. 

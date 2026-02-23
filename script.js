@@ -22,6 +22,8 @@ const allCardSection = document.getElementById("allCards");
 const mainContainer = document.querySelector("main");
 const filteredSection = document.getElementById("filtered-section");
 
+let deleteBtn = document.querySelectorAll(".delete-btn");
+
 
 
 
@@ -34,6 +36,14 @@ function calculateCount() {
 }
 
 calculateCount();
+
+deleteBtn.forEach(deleteBtn => {
+    deleteBtn.addEventListener("click", function () {
+        let deleteCard = deleteBtn.parentNode.parentNode.parentNode.parentNode;
+        deleteCard.classList.add("hidden");
+        calculateCount();
+    })
+});
 
 
 // step 1
@@ -75,6 +85,8 @@ function toggleStyle(id) {
 }
 
 mainContainer.addEventListener("click", function (event) {
+
+
 
     if (event.target.classList.contains('interview-btn')) {
         const parenNode = event.target.parentNode.parentNode;
@@ -141,7 +153,6 @@ mainContainer.addEventListener("click", function (event) {
             renderInterview();
         }
 
-        console.log(cardInfo)
         calculateCount()
     }
 
@@ -165,7 +176,7 @@ function renderInterview() {
                             <p class="cardDes text-[#64748B]"> ${interview.cardDes} </p>
                         </div>
                         <div>
-                            <button id="delete-btn" class="btn btn-circle"><i
+                            <button  class="delete-btn btn btn-circle"><i
                                     class="fa-regular fa-trash-can"></i></button>
                         </div>
                     </div>
@@ -207,7 +218,7 @@ function renderRejected() {
                             <p class="cardDes text-[#64748B]"> ${rejected.cardDes} </p>
                         </div>
                         <div>
-                            <button id="delete-btn" class="btn btn-circle"><i
+                            <button class="delete-btn btn btn-circle"><i
                                     class="fa-regular fa-trash-can"></i></button>
                         </div>
                     </div>

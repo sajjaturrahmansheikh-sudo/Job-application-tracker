@@ -37,13 +37,7 @@ function calculateCount() {
 
 calculateCount();
 
-deleteBtn.forEach(deleteBtn => {
-    deleteBtn.addEventListener("click", function () {
-        let deleteCard = deleteBtn.parentNode.parentNode.parentNode.parentNode;
-        deleteCard.classList.add("hidden");
-        calculateCount();
-    })
-});
+
 
 
 // step 1
@@ -86,7 +80,15 @@ function toggleStyle(id) {
 
 mainContainer.addEventListener("click", function (event) {
 
-
+    if (event.target.classList.contains('delete-btn')) {
+        deleteBtn.forEach(deleteBtn => {
+            deleteBtn.addEventListener("click", function () {
+                let deleteCard = deleteBtn.parentNode.parentNode.parentNode.parentNode;
+                deleteCard.classList.add("hidden");
+                calculateCount();
+            })
+        });
+    }
 
     if (event.target.classList.contains('interview-btn')) {
         const parenNode = event.target.parentNode.parentNode;
